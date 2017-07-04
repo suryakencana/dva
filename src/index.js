@@ -1,17 +1,18 @@
-// import { createBrowserHistory } from 'history/createBrowserHistory';
-import ReactRouter from 'react-router';
+import createHistory from 'history/createBrowserHistory';
 import { routerReducer as routing, routerMiddleware, syncHistoryWithStore } from 'react-router-redux';
 import createDva from './createDva';
+
+const history = createHistory();
 
 export default createDva({
   mobile: false,
   initialReducer: {
     routing,
   },
-  defaultHistory: ReactRouter.hashHistory,
+  defaultHistory: history,
   routerMiddleware,
 
-  setupHistory(history) {
-    this._history = syncHistoryWithStore(history, this._store);
+  setupHistory(history_) {
+    this._history = syncHistoryWithStore(history_, this._store);
   },
 });
