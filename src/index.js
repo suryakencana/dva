@@ -1,4 +1,4 @@
-import createBrowserHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history/createBrowserHistory';
 import { routerReducer as routing, routerMiddleware, syncHistoryWithStore } from 'react-router-redux';
 import createDva from './createDva';
 
