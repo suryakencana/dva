@@ -26,7 +26,7 @@ export default function createDva(createOpts) {
     initialReducer,
     defaultHistory,
     routerMiddleware,
-    setupHistory,
+    // setupHistory,
   } = createOpts;
 
   /**
@@ -248,8 +248,8 @@ export default function createDva(createOpts) {
       // start saga
       sagas.forEach(sagaMiddleware.run);
 
-      // setup history
-      if (setupHistory) setupHistory.call(this, history);
+      // setup history for React Router 4
+      // if (setupHistory) setupHistory.call(this, history);
 
       // run subscriptions
       const unlisteners = {};
